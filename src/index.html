@@ -21,7 +21,11 @@
     <script src="env.js"></script>
     <script src="https://unpkg.com/@n8d/htwoo-core@1.2.5/dist/js/umd/htwoo.min.js"></script>
     <style>
-      #content {
+      div#auth {
+        padding: 2em;
+      }
+
+      div#content {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
@@ -35,16 +39,16 @@
         border-radius: 50%;
         border: 2px solid black;
       }
-      .high-priority {
-        color: red;
-        font-weight: bold;
+
+      div.hoo-splashscr {
+        justify-content: initial;
       }
     </style>
   </head>
 
   <body class="ms-Fabric" dir="ltr">
-    <div id="content"></div>
     <div id="auth"></div>
+    <div id="content"></div>
     <script>
       ((appId, msal, MSGraphAuthCodeMSALBrowserAuthProvider) => {
         const msalClient = new msal.PublicClientApplication({
@@ -55,7 +59,7 @@
 
         function render() {
           document.querySelector("div#content").innerHTML = "";
-          document.querySelector("#auth").innerHTML = "";
+          document.querySelector("div#auth").innerHTML = "";
 
           const accounts = msalClient.getAllAccounts();
 
@@ -73,29 +77,25 @@
                                         Product Support Tickets
                                     </p>
                                     <footer class="hoo-splashcard-footer">
-                                        <button id="login" class="hoo-button-primary">
+                                        <button type="button" id="login" class="hoo-button-primary">
                                             <span class="hoo-button-label">Login</span>
                                         </button>
                                     </article>
                                 </div>
                             </div>`;
 
-            document.querySelector("#auth").innerHTML = element;
+            document.querySelector("div#auth").innerHTML = element;
 
             document
               .querySelector("button#login")
               .addEventListener("click", login);
           } else {
-            document.querySelector(
-              "#auth"
-            ).innerHTML = `<div style="display:flex;column-gap:2em;padding:2em;">
-                                <button id="logout" class="hoo-button">
-                                    <span class="hoo-button-label">Logout</span>
-                                </button>
-                                <button id="back" class="hoo-button">
-                                    <span class="hoo-button-label">Back</span>
-                                </button>
-                           </div>`;
+            document.querySelector("div#auth").innerHTML = `
+              <button type="button" id="logout" class="hoo-button">
+                <span class="hoo-button-label">Logout</span>
+              </button>
+            `;
+
             document
               .querySelector("button#logout")
               .addEventListener("click", logout);
@@ -164,10 +164,12 @@
                   (task) =>
                     `<tr>
                   <td>${
-                      task.priority === 3
-                        ? '<span class="high-priority">!</span> '
-                        : ""
-                    }<a href="https://tasks.office.com/6plbfs.onmicrosoft.com/Home/Task/${task.id}?Type=TaskLink&Channel=Link">${task.title}</td>
+                    task.priority === 3
+                      ? '<span class="high-priority">!</span> '
+                      : ""
+                  }<a href="https://tasks.office.com/6plbfs.onmicrosoft.com/Home/Task/${
+                      task.id
+                    }?Type=TaskLink&Channel=Link">${task.title}</td>
                   <td>${
                     task.percentComplete === 100
                       ? "Completed"
