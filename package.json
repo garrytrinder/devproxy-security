@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "http-server ./src -p 3000 -c-1"
+    "start": "http-server ./src -p 3000 -c-1",
+    "test": "playwright test"
   },
   "author": "",
   "license": "ISC",
