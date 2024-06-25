@@ -1,0 +1,46 @@
+trigger:
+- main
+- dev
+
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- name: LOG_FILE
+  value: devproxy.log
+- name: DEV_PROXY_VERSION
+  value: v0.19.0-beta.5
+- name: DEV_PROXY_CACHE_RESTORED
+  value: 'false'
+
+steps:
+- task: Cache@2
+  inputs:
+    key: '"dev-proxy-$(DEV_PROXY_VERSION)"'
+    path: ./devproxy
+    cacheHitVar: DEV_PROXY_CACHE_RESTORED
+  displayName: Cache Dev Proxy
+
+- script: bash -c "$(curl -sL https://aka.ms/devproxy/setup-beta.sh)" $DEV_PROXY_VERSION
+  displayName: 'Install Dev Proxy beta'
+  condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
+
+- script: bash ./run.sh
+  displayName: 'Run Dev Proxy'
+
+- task: PublishPipelineArtifact@1
+  displayName: Upload Dev Proxy logs
+  inputs:
+    targetPath: $(LOG_FILE)
+    ArtifactName: $(LOG_FILE)
+
+- script: |
+    mkdir -p $(Build.ArtifactStagingDirectory)/Reports
+    find . -name "*Reporter*" -exec cp {} $(Build.ArtifactStagingDirectory)/Reports \;
+  displayName: 'Copy reports to artifact directory'
+- task: PublishPipelineArtifact@1
+  displayName: Upload Dev Proxy reports
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)/Reports'
+    artifactName: 'Reports'
