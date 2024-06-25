@@ -8,7 +8,7 @@ echo "Starting Dev Proxy..."
 # start Dev Proxy in the background
 # log Dev Proxy output to the log file
 # log stdout and stderr to the file
-./devproxy/devproxy --record > $log_file 2>&1 &
+./devproxy/devproxy-beta --record > $log_file 2>&1 &
 
 proxy_pid=$!
 
