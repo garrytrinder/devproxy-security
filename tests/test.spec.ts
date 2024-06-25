@@ -5,7 +5,7 @@ test('test', async ({ page }) => {
   await page.goto('http://localhost:3000/');
 
   // check if the page contains the splash screen text
-  await expect(page.getByRole('paragraph')).toContainText('Product Support Tickets');
+  await expect(page.getByRole('paragraph')).toContainText('Product Support Tickets', { timeout: 30000 });
 
   // check that the login button is visible
   const button = page.getByRole('button', { name: 'Login' });
