@@ -29,6 +29,12 @@
             ]
         },
         {
+            "name": "MinimalPermissionsGuidancePlugin",
+            "enabled": true,
+            "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+            "configSection": "minimalPermissionsGuidancePlugin"
+        },
+        {
             "name": "MarkdownReporter",
             "enabled": true,
             "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
