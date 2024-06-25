@@ -33,11 +33,7 @@ echo "Adding certificate to the NSS database for Chromium..."
 mkdir -p $HOME/.pki/nssdb
 certutil --empty-password -d $HOME/.pki/nssdb -N 
 certutil -d sql:$HOME/.pki/nssdb -A -t "CT,," -n dev-proxy-ca.crt -i dev-proxy-ca.crt
-echo "Certificate trusted." 
-
-# run the web server in the background
-echo "Running web server..."
-npm run start &
+echo "Certificate trusted."
 
 echo "Running Playwright tests..."
 npm test
