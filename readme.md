@@ -12,7 +12,7 @@ If you work on a large solution that uses many endpoints, it can be difficult to
 To check for minimal permissions:
 
 1. Start the local web server, `npm start`
-1. Start Dev Proxy, `devproxy-beta --config-file .\.dev-proxy\minimal-permissions.json --urls-to-watch "https://graph.micrsoft.com/*"`
+1. Start Dev Proxy, `devproxy-beta --config-file .\.dev-proxy\minimal-permissions.json --urls-to-watch "https://graph.microsoft.com/*"`
 1. Start recording mode, press <kbd>R</kdb>
 1. Navigate to `http://localhost:3000`, login and wait for the table to be populated
 1. Stop recording mode, press <kbd>S</kdb>
@@ -25,7 +25,7 @@ A common approach to security is to apply the principle of least privilege (PoLP
 To check your access token for excessive permissions:
 
 1. Start the local web server, `npm start`
-1. Start Dev Proxy, `devproxy-beta -c .\.dev-proxy\minimal-permissions.json -u "https://graph.micrsoft.com/*" --record`
+1. Start Dev Proxy, `devproxy-beta -c .\.dev-proxy\minimal-permissions.json -u "https://graph.microsoft.com/*" --record`
 1. Navigate to `http://localhost:3000`, login and wait for the table to be populated
 1. Stop recording mode, press <kbd>S</kdb>
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
