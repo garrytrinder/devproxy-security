@@ -1,4 +1,4 @@
-name: Test app using Dev Proxy
+name: API permissions check
 
 on:
   workflow_dispatch:
