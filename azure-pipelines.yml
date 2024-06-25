@@ -33,7 +33,7 @@ steps:
   displayName: Upload Dev Proxy logs
   inputs:
     targetPath: $(LOG_FILE)
-    ArtifactName: $(LOG_FILE)
+    artifact: $(LOG_FILE)
 
 - script: |
     mkdir -p $(Build.ArtifactStagingDirectory)/Reports
@@ -43,4 +43,4 @@ steps:
   displayName: Upload Dev Proxy reports
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)/Reports'
-    artifactName: 'Reports'
+    artifact: 'Reports'
