@@ -18,6 +18,15 @@
             "urlsToWatch": [
                 "https://graph.microsoft.com/v1.0/*"
             ]
+        },
+        {
+            "name": "MockResponsePlugin",
+            "enabled": true,
+            "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+            "configSection": "mocksPlugin",
+            "urlsToWatch": [
+                "https://placehold.co/*"
+            ]
         }
     ],
     "entraMocksPlugin": {
@@ -25,5 +34,8 @@
     },
     "graphMocksPlugin": {
         "mocksFile": "responses/graph-mocks.json"
+    },
+    "mocksPlugin": {
+        "mocksFile": "responses/image-mocks.json"
     }
 }

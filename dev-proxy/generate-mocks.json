@@ -8,6 +8,7 @@
         }
     ],
     "urlsToWatch": [
+        "https://placehold.co/*",
         "https://login.microsoftonline.com/*",
         "https://graph.microsoft.com/*"
     ]
