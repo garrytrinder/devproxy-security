@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "http-server ./src -a localhost -p 3000 -c-1",
-    "test": "playwright test"
+    "test": "playwright test --debug"
   },
   "author": "",
   "license": "ISC",
