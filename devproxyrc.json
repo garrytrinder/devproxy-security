@@ -27,15 +27,25 @@
             "urlsToWatch": [
                 "https://placehold.co/*"
             ]
+        },
+        {
+            "name": "MarkdownReporter",
+            "enabled": true,
+            "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll"
         }
     ],
     "entraMocksPlugin": {
-        "mocksFile": "responses/entra-mocks.json"
+        "mocksFile": ".dev-proxy/responses/entra-mocks.json"
     },
     "graphMocksPlugin": {
-        "mocksFile": "responses/graph-mocks.json"
+        "mocksFile": ".dev-proxy/responses/graph-mocks.json"
     },
     "mocksPlugin": {
-        "mocksFile": "responses/image-mocks.json"
-    }
+        "mocksFile": ".dev-proxy/responses/image-mocks.json"
+    },
+    "urlsToWatch": [
+        "https://graph.microsoft.com/v1.0/*",
+        "https://login.microsoftonline.com/*",
+        "https://placehold.co/*"
+    ]
 }
