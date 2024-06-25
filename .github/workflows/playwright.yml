@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Create env.js file in src folder
+        run: echo "const appId = 'a58240cb-8364-4c46-af08-3c6908722601';" > src/env.js
+
       #################################
       # Cache + install of Playwright #
       #################################
