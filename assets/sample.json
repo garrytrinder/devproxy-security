@@ -1,0 +1,79 @@
+[
+    {
+        "name": "pnp-devproxy-improve-app-security-graph",
+        "source": "pnp",
+        "title": "YOUR-SAMPLE-TITLE",
+        "shortDescription": "YOUR-SHORT-DESCRIPTION",
+        "url": "https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph",
+        "downloadUrl": "https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph",
+        "longDescription": [
+            "YOUR-SHORT-DESCRIPTION"
+        ],
+        "creationDateTime": "2023-12-25",
+        "updateDateTime": "2023-12-31",
+        "products": [
+            "Dev Proxy"
+        ],
+        "metadata": [
+            {
+                "key": "PRESET",
+                "value": "No"
+            },
+            {
+                "key": "MOCKS",
+                "value": "Yes"
+            },
+            {
+                "key": "PLUGIN",
+                "value": "No"
+            },
+            {
+                "key": "PROXY VERSION",
+                "value": "v0.19"
+            }
+        ],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 100,
+                "url": "https://github.com/pnp/proxy-samples/raw/main/samples/improve-app-security-graph/assets/YOUR-IMAGE-NAME-HERE",
+                "alt": "Dev Proxy simulating throttling on my-api"
+            },
+            {
+                "type": "video",
+                "order": 101,
+                "url": "https://www.youtube.com/embed/FS-_0KENJkI",
+                "alt": "Dev Proxy throttling on my-api"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "garrtrinder",
+                "pictureUrl": "https://github.com/garrytrinder.png",
+                "name": "Garry Trinder"
+            }
+        ],
+        "references": [
+            {
+                "name": "Get started with the Dev Proxy",
+                "description": "The tutorial will introduce you to the Dev Proxy and show you how to use its features.",
+                "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/get-started"
+            },
+            {
+                "name": "Detect minimal Microsoft Graph API permissions",
+                "description": "Instructions on how to detect the minimal Microsoft Graph API permissions that your app needs.",
+                "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/detect-minimal-microsoft-graph-api-permissions"
+            },
+            {
+                "name": "Check if you're using excessive Microsoft Graph API permissions",
+                "description": "Instructions on how to check if your app is using more permissions than it needs.",
+                "url": "https://learn.microsoft.com/microsoft-cloud/dev/dev-proxy/how-to/check-if-you-are-using-excessive-microsoft-graph-api-permissions"
+            },
+            {
+                "name": "Use Dev Proxy in CI/CD scenarios",
+                "description": "Instructions on how to use Dev Proxy with GitHub Actions and Azure Pipelines.",
+                "url": "https://learn.microsoft.com/en-gb/microsoft-cloud/dev/dev-proxy/how-to/use-dev-proxy-in-ci-cd-overview"
+            }
+        ]
+    }
+]
