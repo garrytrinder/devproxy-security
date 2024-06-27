@@ -6,9 +6,21 @@
             "enabled": true,
             "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
             "configSection": "minimalPermissionsPlugin"
+        },
+        {
+            "name": "MockResponsePlugin",
+            "enabled": true,
+            "pluginPath": "~appFolder/plugins/dev-proxy-plugins.dll",
+            "configSection": "mocksPlugin",
+            "urlsToWatch": [
+                "https://graph.microsoft.com/*"
+            ]
         }
     ],
     "minimalPermissionsPlugin": {
         "type": "delegated"
+    },
+    "mocksPlugin": {
+        "mocksFile": "responses/graph-mocks.json"
     }
 }

@@ -390,40 +390,8 @@
                 },
                 "headers": [
                     {
-                        "name": "Cache-Control",
-                        "value": "no-cache"
-                    },
-                    {
-                        "name": "Transfer-Encoding",
-                        "value": "chunked"
-                    },
-                    {
                         "name": "Content-Type",
                         "value": "application/json;odata.metadata=minimal;odata.streaming=true;IEEE754Compatible=false;charset=utf-8"
-                    },
-                    {
-                        "name": "Content-Encoding",
-                        "value": "gzip"
-                    },
-                    {
-                        "name": "Vary",
-                        "value": "Accept-Encoding"
-                    },
-                    {
-                        "name": "Strict-Transport-Security",
-                        "value": "max-age=31536000"
-                    },
-                    {
-                        "name": "request-id",
-                        "value": "94eb29a1-5789-45d6-bc54-7eb672bcbe7e"
-                    },
-                    {
-                        "name": "client-request-id",
-                        "value": "a59baf67-1261-1c69-36f8-4299db569e0a"
-                    },
-                    {
-                        "name": "x-ms-ags-diagnostic",
-                        "value": "{\u0022ServerInfo\u0022:{\u0022DataCenter\u0022:\u0022UK South\u0022,\u0022Slice\u0022:\u0022E\u0022,\u0022Ring\u0022:\u00225\u0022,\u0022ScaleUnit\u0022:\u0022000\u0022,\u0022RoleInstance\u0022:\u0022LN2PEPF000114C5\u0022}}"
                     },
                     {
                         "name": "Access-Control-Allow-Origin",
@@ -432,26 +400,6 @@
                     {
                         "name": "Access-Control-Expose-Headers",
                         "value": "ETag, Location, Preference-Applied, Content-Range, request-id, client-request-id, ReadWriteConsistencyToken, Retry-After, SdkVersion, WWW-Authenticate, x-ms-client-gcc-tenant"
-                    },
-                    {
-                        "name": "X-ProxyCluster",
-                        "value": "weu-002.tasks.osi.office.net"
-                    },
-                    {
-                        "name": "X-OfficeCluster",
-                        "value": "weu-002.tasks.osi.office.net"
-                    },
-                    {
-                        "name": "X-Tasks-CorrelationId",
-                        "value": "1c5915db-b2d7-4c76-a376-019400394d24"
-                    },
-                    {
-                        "name": "OData-Version",
-                        "value": "4.0"
-                    },
-                    {
-                        "name": "Date",
-                        "value": "Tue, 25 Jun 2024 08:48:34 GMT"
                     }
                 ]
             }
