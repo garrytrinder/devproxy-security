@@ -48,6 +48,9 @@ To check for minimal permissions locally:
 
 The minimal scopes for the tracked requests is shown in the console output.
 
+> [!NOTE]
+> Authentication flow is real, however the responses from Microsoft Graph are mocked.
+
 ![Terminal output showing minimal scopes for the tracked requests](./assets/minimal-permissions.png)
 
 ### Check if you are using excessive permissions
@@ -64,6 +67,9 @@ To check your access token for excessive permissions locally:
 
 The guidance is shown in the console output.
 
+> [!NOTE]
+> Authentication flow is real, however the responses from Microsoft Graph are mocked.
+
 ![Terminal output showing minimal scopes for the tracked requests and excessive scopes](./assets/excessive-permissions.png)
 
 ### Prevent scope creep
@@ -79,6 +85,9 @@ To run the tests locally:
 1. Run tests, `npm test`
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
 1. Open `MinimalPermissionsGuidancePlugin_MarkdownReporter.md` file to view the output
+
+> [!NOTE]
+> Authentication flow and responses from Microsoft Graph are mocked.
 
 ![Visual Studio Code showing passed Playwright tests in the Test Explorer, a Playwright test written in TypeScript, a terminal window with Dev Proxy running and the generated markdown report open in the editor displaying minimal permissions and excessive permissions](./assets/playwright.png)
 
