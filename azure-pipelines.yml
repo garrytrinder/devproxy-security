@@ -73,7 +73,7 @@ steps:
 
 - script: |
     mkdir -p $(Build.ArtifactStagingDirectory)/Reports
-    find . -name "*Reporter*" -exec cp {} $(Build.ArtifactStagingDirectory)/Reports \;
+    cp *Reporter* $(Build.ArtifactStagingDirectory)/Reports
   displayName: 'Copy reports to artifact directory'
 - task: PublishPipelineArtifact@1
   displayName: Upload Dev Proxy reports
