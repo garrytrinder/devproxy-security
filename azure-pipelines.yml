@@ -28,6 +28,9 @@ steps:
 - script: echo "const appId = 'a58240cb-8364-4c46-af08-3c6908722601';" > src/env.js
   displayName: 'Create env.js file in src folder'
 
+#################################
+# Cache + install of Playwright #
+#################################
 - script: |
     PLAYWRIGHT_VERSION=$(npm ls @playwright/test | grep @playwright | sed 's/.*@//')
     echo "Playwright's Version: $PLAYWRIGHT_VERSION"
@@ -45,6 +48,9 @@ steps:
   condition: ne(variables['PLAYWRIGHT_CACHE_RESTORED'], 'true')
   displayName: 'Install Playwright Browsers'
 
+################################
+# Cache + install of Dev Proxy #
+################################
 - task: Cache@2
   inputs:
     key: '"dev-proxy-$(DEV_PROXY_VERSION)"'
@@ -55,6 +61,9 @@ steps:
 - script: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" $DEV_PROXY_VERSION
   displayName: 'Install Dev Proxy'
   condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
+
+- script: devproxy
+  displayName: 'Run Dev Proxy'
 
 - script: bash ./run.sh
   displayName: 'Run Dev Proxy'
