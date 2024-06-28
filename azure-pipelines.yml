@@ -76,7 +76,11 @@ steps:
 
 - script: |
     mkdir -p $(Build.ArtifactStagingDirectory)/Reports
-    cp *Reporter* $(Build.ArtifactStagingDirectory)/Reports
+    for file in *Reporter*; do
+      if [ -f "$file" ]; then
+        cp "$file" $(Build.ArtifactStagingDirectory)/Reports
+      fi
+    done
   displayName: 'Copy reports to artifact directory'
 
 - task: PublishPipelineArtifact@1
