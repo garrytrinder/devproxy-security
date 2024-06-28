@@ -24,7 +24,7 @@ Version|Date|Comments
 
 * Clone this repository (or [download this solution as a .ZIP file](https://pnp.github.io/download-partial/?url=https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph) then unzip it)
 * Run `npm install` to install project dependencies
-* Run `scripts\setup.ps1` (Windows) or `scripts\setup.sh` (macOS) to create a Microsoft Entra ID app registration
+* Run `scripts\setup.ps1` (Windows) or `scripts\setup.sh` (macOS) to create a Microsoft Entra app registration
 
 ## Features
 
