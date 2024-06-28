@@ -62,9 +62,6 @@ steps:
   displayName: 'Install Dev Proxy'
   condition: ne(variables.DEV_PROXY_CACHE_RESTORED, 'true')
 
-- script: devproxy
-  displayName: 'Run Dev Proxy'
-
 - script: bash ./run.sh
   displayName: 'Run Dev Proxy'
 
