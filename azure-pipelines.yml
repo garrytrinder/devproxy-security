@@ -71,9 +71,6 @@ steps:
     targetPath: $(LOG_FILE)
     artifact: $(LOG_FILE)
 
-- script: ls -al
-  displayName: 'List all files'
-
 - script: |
     mkdir -p $(Build.ArtifactStagingDirectory)/Reports
     for file in *Reporter*; do
