@@ -71,10 +71,14 @@ steps:
     targetPath: $(LOG_FILE)
     artifact: $(LOG_FILE)
 
+- script: ls -al
+  displayName: 'List all files'
+
 - script: |
     mkdir -p $(Build.ArtifactStagingDirectory)/Reports
     cp *Reporter* $(Build.ArtifactStagingDirectory)/Reports
   displayName: 'Copy reports to artifact directory'
+
 - task: PublishPipelineArtifact@1
   displayName: Upload Dev Proxy reports
   inputs:
