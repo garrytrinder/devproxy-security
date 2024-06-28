@@ -4,6 +4,8 @@
 
 This sample demonstrates how to use Dev Proxy to improve your app security when calling Microsoft Graph API.
 
+![Product support tickets web app showing a list of current support tickets and ticket type counts](./assets/web-app.png)
+
 ## Compatibility
 
 ![Dev Proxy v0.19](https://img.shields.io/badge/devproxy-v0.10-green.svg)
@@ -16,7 +18,7 @@ This sample demonstrates how to use Dev Proxy to improve your app security when 
 
 Version|Date|Comments
 -------|----|--------
-1.0|June 27, 2024|Initial release
+1.0|June 28, 2024|Initial release
 
 ## Minimal path to awesome
 
@@ -25,8 +27,6 @@ Version|Date|Comments
 * Run `scripts\setup.ps1` (Windows) or `scripts\setup.sh` (macOS) to create a Microsoft Entra ID app registration
 
 ## Features
-
-Extended description of the contents of the sample. Does it include presets, mocks, a plugin? What does it help the user achieve? What problem does it solve?
 
 Using this sample you can use the Dev Proxy to:
 
@@ -48,7 +48,7 @@ To check for minimal permissions locally:
 
 The minimal scopes for the tracked requests is shown in the console output.
 
-TODO: Add image
+![Terminal output showing minimal scopes for the tracked requests](./assets/minimal-permissions.png)
 
 ### Check if you are using excessive permissions
 
@@ -64,7 +64,7 @@ To check your access token for excessive permissions locally:
 
 The guidance is shown in the console output.
 
-TODO: Add image
+![Terminal output showing minimal scopes for the tracked requests and excessive scopes](./assets/excessive-permissions.png)
 
 ### Prevent scope creep
 
@@ -80,13 +80,13 @@ To run the tests locally:
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
 1. Open `MinimalPermissionsGuidancePlugin_MarkdownReporter.md` file to view the output
 
-TODO: Add image
+![Visual Studio Code showing passed Playwright tests in the Test Explorer, a Playwright test written in TypeScript, a terminal window with Dev Proxy running and the generated markdown report open in the editor displaying minimal permissions and excessive permissions](./assets/playwright.png)
 
 A [GitHub Workflow](./.github/workflows/api-permissions-check.yml) and [Azure DevOps Pipeline](./azure-pipelines.yml) are provided to automatically run Playwright and Dev Proxy when new code is committed to the repo.
 
-TODO: Add image
+![GitHub Actions workflow job summary displaying the markdown report](./assets/github-actions.png)
 
-TODO: Add image
+![Azure Pipelines job summary](./assets/azure-pipelines.png)
 
 ## Help
 
