@@ -25,16 +25,24 @@ steps:
 - script: npm ci
   displayName: 'Install dependencies'
 
-- script: echo "const appId = 'a58240cb-8364-4c46-af08-3c6908722601';" > src/env.js
+- script: echo "const appId = '$APPID';" > src/env.js
   displayName: 'Create env.js file in src folder'
+  env:
+    APPID: $(APPID)
+
+- script: cat src/env.js
+  displayName: 'Show env.js file'
 
 - script: |
-    echo "TEST_USERNAME=$TEST_USERNAME" > src/env.js
-    echo "TEST_PASSWORD=$TEST_PASSWORD" >> src/env.js
+    echo "TEST_USERNAME=$TEST_USERNAME" > .env
+    echo "TEST_PASSWORD=$TEST_PASSWORD" >> .env
   displayName: 'Create dotenv file'
   env:
     TEST_USERNAME: $(TEST_USERNAME)
     TEST_PASSWORD: $(TEST_PASSWORD)
+
+- script: cat .env
+  displayName: 'Show dotenv file'
 
 #################################
 # Cache + install of Playwright #

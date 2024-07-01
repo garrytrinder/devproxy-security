@@ -25,11 +25,14 @@ jobs:
         run: npm ci
 
       - name: Create env.js file in src folder
-        run: echo "const appId = 'a58240cb-8364-4c46-af08-3c6908722601';" > src/env.js
+        run: echo "const appId = '${{ vars.APPID }}';" > src/env.js
+
+      - name: Show env.js file
+        run: cat src/env.js
 
       - name: Create dotenv file
         run: |
-          echo "TEST_USERNAME=${{ secrets.TEST_USERNAME }}" > .env
+          echo "TEST_USERNAME=${{ vars.TEST_USERNAME }}" > .env
           echo "TEST_PASSWORD=${{ secrets.TEST_PASSWORD }}" >> .env
 
       #################################
