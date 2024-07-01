@@ -28,6 +28,14 @@ steps:
 - script: echo "const appId = 'a58240cb-8364-4c46-af08-3c6908722601';" > src/env.js
   displayName: 'Create env.js file in src folder'
 
+- script: |
+    echo "TEST_USERNAME=$TEST_USERNAME" > src/env.js
+    echo "TEST_PASSWORD=$TEST_PASSWORD" >> src/env.js
+  displayName: 'Create dotenv file'
+  env:
+    TEST_USERNAME: $(TEST_USERNAME)
+    TEST_PASSWORD: $(TEST_PASSWORD)
+
 #################################
 # Cache + install of Playwright #
 #################################
