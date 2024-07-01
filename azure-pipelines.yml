@@ -30,9 +30,6 @@ steps:
   env:
     APPID: $(APPID)
 
-- script: cat src/env.js
-  displayName: 'Show env.js file'
-
 - script: |
     echo "TEST_USERNAME=$TEST_USERNAME" > .env
     echo "TEST_PASSWORD=$TEST_PASSWORD" >> .env
@@ -40,9 +37,6 @@ steps:
   env:
     TEST_USERNAME: $(TEST_USERNAME)
     TEST_PASSWORD: $(TEST_PASSWORD)
-
-- script: cat .env
-  displayName: 'Show dotenv file'
 
 #################################
 # Cache + install of Playwright #
