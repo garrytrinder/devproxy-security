@@ -78,6 +78,7 @@ This scenario uses Playwright end to end tests to automate the issuing of reques
 
 > [!IMPORTANT]
 > For this scenario you will need to provide the username and password of an account which Playwright will use to login to your Microsoft 365 tenant and obtain an access token. MFA must not be enabled on this account.
+
 > [!NOTE]
 > This scenario uses the `devproxyrc.json` file in the root as it's configuration
 
