@@ -67,7 +67,7 @@ jobs:
 
       - name: Install Dev Proxy
         if: steps.cache-devproxy.outputs.cache-hit != 'true'
-        run: bash -c "$(curl -sL https://aka.ms/devproxy/setup-beta.sh)" ${{ env.DEVPROXY_VERSION }}
+        run: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" ${{ env.DEVPROXY_VERSION }}
 
       - name: Run Dev Proxy
         run: /bin/bash run.sh
