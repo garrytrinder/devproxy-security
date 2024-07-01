@@ -100,13 +100,21 @@ A [GitHub Workflow](./.github/workflows/api-permissions-check.yml) and [Azure De
 
 ### Github Actions
 
-To use the workflow, you will need to create two secrets, `TEST_USERNAME` and `TEST_PASSWORD`, in your repository to store the username and password of your test account securely. See [Creating secrets for a repository](https://docs.github.com/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
+To use the workflow, you will need to:
+
+* Create `TEST_PASSWORD` secret, set the value to the password of your test account. See [Creating secrets for a repository](https://docs.github.com/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
+* Create `TEST_USERNAME` variable, set the value to the username of your test account. See [Creating configuration variables for a repository](https://docs.github.com/actions/learn-github-actions/variables#creating-configuration-variables-for-a-repository)
+* Create `APPID` variable, set the value to the ID of the Microsoft Entra app registration which is stored in the `env.js` file in the `src` directory.
 
 ![GitHub Actions workflow job summary displaying the markdown report](./assets/github-actions.png)
 
 ### Azure Pipelines
 
-To use the workflow, you will need to create two variables, `TEST_USERNAME` and `TEST_PASSWORD`, to store the username and password of your test account securely. See [Secret variable in the UI](https://learn.microsoft.com/azure/devops/pipelines/process/set-secret-variables?view=azure-devops&tabs=yaml%2Cbash#secret-variable-in-the-ui)
+To use the workflow, you will need to:
+
+* Create `TEST_PASSWORD` variable, set the value to the password of your test account. See [Secret variable in the UI](https://learn.microsoft.com/azure/devops/pipelines/process/set-secret-variables?view=azure-devops&tabs=yaml%2Cbash#secret-variable-in-the-ui)
+* Create `TEST_USERNAME` variable, set the value to the username of your test account.
+* Create `APPID` variable, set the value to the ID of the Microsoft Entra app registration which is stored in the `env.js` file in the `src` directory.
 
 ![Azure Pipelines job summary](./assets/azure-pipelines.png)
 

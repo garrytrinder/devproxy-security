@@ -27,9 +27,6 @@ jobs:
       - name: Create env.js file in src folder
         run: echo "const appId = '${{ vars.APPID }}';" > src/env.js
 
-      - name: Show env.js file
-        run: cat src/env.js
-
       - name: Create dotenv file
         run: |
           echo "TEST_USERNAME=${{ vars.TEST_USERNAME }}" > .env
@@ -68,9 +65,6 @@ jobs:
       - name: Install Dev Proxy
         if: steps.cache-devproxy.outputs.cache-hit != 'true'
         run: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" -- ${{ env.DEVPROXY_VERSION }}
-
-      - name: Check Dev Proxy version
-        run: ./devproxy/devproxy --version
 
       - name: Run Dev Proxy
         run: /bin/bash run.sh
