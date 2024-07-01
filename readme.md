@@ -98,7 +98,15 @@ To run the tests locally:
 
 A [GitHub Workflow](./.github/workflows/api-permissions-check.yml) and [Azure DevOps Pipeline](./azure-pipelines.yml) are provided to automatically run Playwright and Dev Proxy when new code is committed to the repo.
 
+### Github Actions
+
+To use the workflow, you will need to create two secrets, `TEST_USERNAME` and `TEST_PASSWORD`, in your repository to store the username and password of your test account securely. See [Creating secrets for a repository](https://docs.github.com/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
+
 ![GitHub Actions workflow job summary displaying the markdown report](./assets/github-actions.png)
+
+### Azure Pipelines
+
+To use the workflow, you will need to create two variables, `TEST_USERNAME` and `TEST_PASSWORD`, to store the username and password of your test account securely. See [Secret variable in the UI](https://learn.microsoft.com/azure/devops/pipelines/process/set-secret-variables?view=azure-devops&tabs=yaml%2Cbash#secret-variable-in-the-ui)
 
 ![Azure Pipelines job summary](./assets/azure-pipelines.png)
 
