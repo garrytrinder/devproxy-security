@@ -70,7 +70,7 @@ jobs:
         run: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" -- ${{ env.DEVPROXY_VERSION }}
 
       - name: Check Dev Proxy version
-        run: ./devproxy/devproxy --version
+        run: ./devproxy/devproxy-beta --version
 
       - name: Run Dev Proxy
         run: /bin/bash run.sh
