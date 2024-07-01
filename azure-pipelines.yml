@@ -34,12 +34,12 @@ steps:
   displayName: 'Show env.js file'
 
 - script: |
-    echo "TEST_USERNAME=$TEST_USERNAME" > .env
-    echo "TEST_PASSWORD=$TEST_PASSWORD" >> .env
+    echo "TEST_USERNAME=$(USERNAME)" > .env
+    echo "TEST_PASSWORD=$(PASSWORD)" >> .env
   displayName: 'Create dotenv file'
   env:
-    TEST_USERNAME: $(TEST_USERNAME)
-    TEST_PASSWORD: $(TEST_PASSWORD)
+    USERNAME: $(TEST_USERNAME)
+    PASSWORD: $(TEST_PASSWORD)
 
 - script: cat .env
   displayName: 'Show dotenv file'
