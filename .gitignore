@@ -5,3 +5,4 @@ env.js
 /blob-report/
 /playwright/.cache/
 *Reporter*
+.env

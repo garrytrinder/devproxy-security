@@ -76,18 +76,22 @@ The guidance is shown in the console output.
 
 This scenario uses Playwright end to end tests to automate the issuing of requests sent from your app to Microsoft Graph and generates a markdown report containing the minimal permission scopes and excessive scopes on the access token.
 
+> [!IMPORTANT]
+> For this scenario you will need to provide the username and password of an account which Playwright will use to login to your Microsoft 365 tenant and obtain an access token. MFA must not be enabled on this account.
 > [!NOTE]
 > This scenario uses the `devproxyrc.json` file in the root as it's configuration
 
 To run the tests locally:
 
+1. In the project root, rename `.env.sample` to `.env`
+1. In the `.env` file, replace `TEST_USERNAME` and `TEST_PASSWORD` values with those of your test account
 1. Start Dev Proxy, `devproxy --record`
 1. Run tests, `npm test`
 1. Stop Dev Proxy, press <kbd>Ctrl</kbd> + <kbd>C</kbd>
 1. Open `MinimalPermissionsGuidancePlugin_MarkdownReporter.md` file to view the output
 
 > [!NOTE]
-> Authentication flow and responses from Microsoft Graph are mocked.
+> Authentication flow is real, however the responses from Microsoft Graph are mocked.
 
 ![Visual Studio Code showing passed Playwright tests in the Test Explorer, a Playwright test written in TypeScript, a terminal window with Dev Proxy running and the generated markdown report open in the editor displaying minimal permissions and excessive permissions](./assets/playwright.png)
 

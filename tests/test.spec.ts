@@ -20,6 +20,24 @@ test('test', async ({ page }) => {
   // handle the auth popup
   const popup = await popupPromise;
 
+  // handle username field
+  const username = popup.getByPlaceholder('Email or phone');
+  await username.click();
+  await username.fill(process.env.TEST_USERNAME as string);
+  const next = popup.getByRole('button', { name: 'Next' });
+  await next.click();
+
+  // handle password field
+  const password = popup.getByPlaceholder('Password');
+  await password.click();
+  await password.fill(process.env.TEST_PASSWORD as string);
+  const signIn = popup.getByRole('button', { name: 'Sign in' });
+  await signIn.click();
+
+  // handle sign in reminder
+  const yes = popup.getByRole('button', { name: 'Yes' });
+  await yes.click();
+
   // after the popup is closed, check if the page contains the last ticket returned in the table
   await expect(page.locator('tbody')).toContainText('Eagle Air Range Limitation Inquiry');
 });
