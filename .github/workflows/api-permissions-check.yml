@@ -35,9 +35,6 @@ jobs:
           echo "TEST_USERNAME=${{ vars.TEST_USERNAME }}" > .env
           echo "TEST_PASSWORD=${{ secrets.TEST_PASSWORD }}" >> .env
 
-      - name: Check Dev Proxy version
-        run: devproxy --version
-
       #################################
       # Cache + install of Playwright #
       #################################
@@ -71,6 +68,9 @@ jobs:
       - name: Install Dev Proxy
         if: steps.cache-devproxy.outputs.cache-hit != 'true'
         run: bash -c "$(curl -sL https://aka.ms/devproxy/setup.sh)" -- ${{ env.DEVPROXY_VERSION }}
+
+      - name: Check Dev Proxy version
+        run: ./devproxy/devproxy --version
 
       - name: Run Dev Proxy
         run: /bin/bash run.sh
