@@ -1,7 +1,7 @@
 # Improve your app security when calling Microsoft Graph
 
 > [!IMPORTANT]
-> This sample has been moved to the [Proxy Samples](https://github.com/pnp/proxy-samples/samples/improve-app-security-graph) repository.
+> This sample has been moved to the [Proxy Samples](https://github.com/pnp/proxy-samples/tree/main/samples/improve-app-security-graph) repository.
 
 ## Summary
 
